@@ -17,7 +17,9 @@ Url:		https://github.com/oleksis/%{oname}/
 Source0:	https://github.com/oleksis/%{oname}/archive/refs/tags/v%{version}/%{oname}-%{version}.tar.gz
 BuildRequires:	python3dist(polib)
 BuildRequires:	python3dist(pypubsub)
+BuildRequires:	python3dist(pip)
 BuildRequires:	python3dist(setuptools)
+BuildRequires:	python3dist(wheel)
 BuildRequires:	python3dist(wxpython)
 #BuildRequires:	ffmpeg
 
