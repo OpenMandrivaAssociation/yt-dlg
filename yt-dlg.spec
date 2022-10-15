@@ -10,7 +10,7 @@
 Summary:	Front-end GUI of the popular youtube-dl
 Name:		yt-dlg
 Version:	1.8.3
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Video
 Url:		https://github.com/oleksis/%{oname}/
@@ -51,10 +51,10 @@ A cross platform front-end GUI of the popular youtube-dl written in wxPython.
 sed -i -e "/pyinstaller<=/d" -e "/wxPython<=/d" setup.py
 
 %build
-%py3_build
+%py_build
 
 %install
-%py3_install
+%py_install
 
 # fix manpage name
 mv %{buildroot}%{_mandir}/man1/%{oname}.1 %{buildroot}%{_mandir}/man1/%{name}.1
@@ -82,3 +82,4 @@ EOF
 
 # locales
 #find_lang %{name} --with-qt
+
