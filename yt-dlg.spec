@@ -9,8 +9,8 @@
 
 Summary:	Front-end GUI of the popular youtube-dl
 Name:		yt-dlg
-Version:	1.8.3
-Release:	2
+Version:	1.8.4
+Release:	1
 License:	Public Domain
 Group:		Video
 Url:		https://github.com/oleksis/%{oname}/
