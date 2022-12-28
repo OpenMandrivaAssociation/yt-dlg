@@ -10,7 +10,7 @@
 Summary:	Front-end GUI of the popular youtube-dl
 Name:		yt-dlg
 Version:	1.8.4
-Release:	1
+Release:	2
 License:	Public Domain
 Group:		Video
 Url:		https://github.com/oleksis/%{oname}/
@@ -24,11 +24,13 @@ BuildRequires:	python3dist(wxpython)
 #BuildRequires:	ffmpeg
 
 Requires:	python3
-BuildRequires:	python3dist(wxpython)
-
+Requires:	python3dist(wxpython)
 Recommends:	ffmpeg
 
 BuildArch:	noarch
+
+%rename		youtube-dl-gui
+Conflicts:	youtube-dl-pyqt
 
 %description
 A cross platform front-end GUI of the popular youtube-dl written in wxPython.
@@ -37,8 +39,8 @@ A cross platform front-end GUI of the popular youtube-dl written in wxPython.
 %license LICENSE
 %doc README.md
 %{_bindir}/%{name}
-%{python3_sitelib}/yt_dlg*
 %{python3_sitelib}/youtube_dl_gui/
+%{python3_sitelib}/yt_dlg-*.*-info/
 %{_datadir}/applications/*.desktop
 %{_datadir}/pixmaps/%{oname}.png
 %{_iconsdir}/hicolor/*/apps/%{oname}.png
