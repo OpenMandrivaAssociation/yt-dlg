@@ -1,5 +1,3 @@
-%global oname youtube-dl-gui
-
 # This package use a fork of the original project at
 #   https://github.com/MrS0m30n3/youtube-dl-gui
 # because the author won't port the code to python3.
@@ -9,12 +7,12 @@
 
 Summary:	Front-end GUI of the popular youtube-dl
 Name:		yt-dlg
-Version:	1.8.4
-Release:	2
+Version:	1.8.5
+Release:	1
 License:	Public Domain
 Group:		Video
-Url:		https://github.com/oleksis/%{oname}/
-Source0:	https://github.com/oleksis/%{oname}/archive/refs/tags/v%{version}/%{oname}-%{version}.tar.gz
+Url:		https://github.com/oleksis/youtube-dl-gui/
+Source0:	https://github.com/oleksis/youtube-dl-gui/archive/refs/tags/v%{version}/youtube-dl-gui-%{version}.tar.gz
 BuildRequires:	python3dist(polib)
 BuildRequires:	python3dist(pypubsub)
 BuildRequires:	python3dist(pip)
@@ -42,14 +40,14 @@ A cross platform front-end GUI of the popular youtube-dl written in wxPython.
 %{python3_sitelib}/youtube_dl_gui/
 %{python3_sitelib}/yt_dlg-*.*-info/
 %{_datadir}/applications/*.desktop
-%{_datadir}/pixmaps/%{oname}.png
-%{_iconsdir}/hicolor/*/apps/%{oname}.png
+%{_datadir}/pixmaps/youtube-dl-gui.png
+%{_iconsdir}/hicolor/*/apps/youtube-dl-gui.png
 %{_mandir}/man1/%{name}.1*
 
 #-----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n %{oname}-%{version}
+%autosetup -p1 -n youtube-dl-gui-%{version}
 
 # fix unmet dependencies
 sed -i -e "/pyinstaller<=/d" -e "/wxPython<=/d" setup.py
@@ -61,7 +59,7 @@ sed -i -e "/pyinstaller<=/d" -e "/wxPython<=/d" setup.py
 %py_install
 
 # fix manpage name
-mv %{buildroot}%{_mandir}/man1/%{oname}.1 %{buildroot}%{_mandir}/man1/%{name}.1
+mv %{buildroot}%{_mandir}/man1/youtube-dl-gui.1 %{buildroot}%{_mandir}/man1/%{name}.1
 
 # .desktop
 # from upstream commit commit effd7b72bf1cc4d37ab98dd745fe573a1eb1c292
